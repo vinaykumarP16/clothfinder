@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>cloth - finder | v!n</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/ico" href="./favicon.ico">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: consolas;
+		}
+
+		body{
+			min-height: 100vh;
+			display: flex;
+			align-content: center;
+			justify-content: center;
+			flex-direction: column;
+			background: linear-gradient(45deg,orange,grey,blue)
+		}
+		header{
+			position: absolute;
+			top: 0;
+			text-align: center;
+			justify-content: center;
+			width: 100%;
+			margin: 20px auto;
+			padding: 20px;
+		}
+
+		header h1{
+			letter-spacing: 2px;
+			color: red;
+		}
+
+		input,button{
+			padding: 10px;
+			border:none;
+			margin: 10px;
+			font-size: 1em;
+		}
+
+		button:hover{
+			border: blue;
+			background: green;
+			color:#fff;
+		}
+
+		#out{
+			text-align: center;
+			color: blue;
+			width: 80%;
+			margin: 20px auto;
+			text-transform: lowercase;
+		}
+
+
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Cloth finder</h1>
+	<input type="text" placeholder="enter your name" id="name">
+	<input type="text" placeholder="enter fav color" id="color">
+	<button onclick="getheDress()">submit</button>
+	</header>
+	
+	<h1 id="out"></h1>
+
+
+	<script>
+		
+
+		const getheDress=()=>{
+			const name=document.getElementById('name').value;
+			const color=document.getElementById('color').value;
+			console.log(`${name} selected fav color is ${color}`);
+
+		var text;
+
+			switch(color) {
+			  case "black":
+			    text = "suitings";
+			    break;
+			  case "blue":
+			    text = "casual dress";
+			    break;
+			  case "red":
+			    text = "party dress";
+			    break;
+			  case "green":
+			    text = "designer dress";
+			    break;
+			  case "white":
+    			text = "business formals";
+    			break;    
+			  default:
+			    text = "wear any dress that suits you";
+			}
+
+			console.log(text);
+			const newline=`hello ${name} your fav color is ${color } and you can wear ${text} `;
+			document.getElementById('out').innerHTML=newline;
+
+		}
+
+
+
+	</script>
+</body>
+</html>
